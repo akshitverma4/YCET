@@ -1,7 +1,8 @@
-package com.example.android.ycet
+package views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android.ycet.R
 
 class MainActivity : AppCompatActivity() {
 
