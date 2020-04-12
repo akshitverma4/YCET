@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "477077499998",
+    "firebase_url": "https://ycet-a59c7.firebaseio.com",
+    "project_id": "ycet-a59c7",
+    "storage_bucket": "ycet-a59c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477077499998:android:1d950be776818b8f2a04cf",
+        "android_client_info": {
+          "package_name": "com.example.android.ycet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "477077499998-lie9115vfakj0iougu8svvesjeph09g9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.ycet",
+            "certificate_hash": "5453c3a8b0c15d2f7fb7ec58c69a411f00c5b1c4"
+          }
+        },
+        {
+          "client_id": "477077499998-rs6b7u5ti4cd05ncnp1fa6f1hvbdind6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP7GL570SHCDXBZl_qn7fjl42TTavTKlM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "477077499998-rs6b7u5ti4cd05ncnp1fa6f1hvbdind6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
