@@ -26,6 +26,11 @@ class RegistrationActivity : AppCompatActivity(){
     }
     private fun signUpUser() {
 
+        if (nameEditText.text.toString().isEmpty()){
+            nameEditText.error="Please enter name"
+            nameEditText.requestFocus()
+            return
+        }
 
         if (emailEditText.text.toString().isEmpty()) {
             emailEditText.error = "Please enter email"
@@ -39,34 +44,39 @@ class RegistrationActivity : AppCompatActivity(){
             return
         }
 
-        if (nameEditText.text.toString().isEmpty()) {
-            nameEditText.error = "Please enter name"
-            nameEditText.requestFocus()
-            return
-        }
-
         if (passwordEditText.text.toString().isEmpty()) {
             passwordEditText.error = "Please enter password"
             passwordEditText.requestFocus()
             return
         }
 
+        if (passwordConfirmEditText.text.toString() != passwordEditText.text.toString()){
+            passwordConfirmEditText.error="Password and Confirm password should be same"
+            passwordConfirmEditText.requestFocus()
+            return
+        }
 
 
-        auth.createUserWithEmailAndPassword((emailEditText.text.toString()), passwordEditText.text.toString())
+
+        auth.createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this,LoginActivity::class.java))
-                    finish()
-                }
-                else
-                {
-                    Toast.makeText(baseContext, "Sign Up failed. Try again after some time.",
-                        Toast.LENGTH_SHORT).show()
+                    val user = auth.currentUser
+                    user?.sendEmailVerification()
+                        ?.addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                startActivity(Intent(this, LoginActivity::class.java))
+                                finish()
+                            }
+                        }
+                } else {
+                    Toast.makeText(
+                        baseContext, "Sign Up failed. Try again after some time.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
 }
-
 
 

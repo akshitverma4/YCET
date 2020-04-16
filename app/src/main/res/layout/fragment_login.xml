@@ -49,7 +49,7 @@
                 android:drawablePadding="8dp"
                 android:hint="@string/email"
                 android:inputType="textPersonName"
-                android:maxLength="20"
+                android:maxLength="30"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:elevation="50dp"
