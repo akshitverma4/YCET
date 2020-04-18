@@ -13,12 +13,7 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dashboardactivity)
 
-    button.setOnClickListener {
-        FirebaseAuth.getInstance().signOut()
-        finish()
-        startActivity(Intent(this,MainActivity::class.java))
 
-    }
 
     }
 }

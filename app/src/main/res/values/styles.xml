@@ -1,13 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryPink</item>
         <item name="colorPrimaryDark">@color/colorPrimaryPurple</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">roboto</item>
         <item name="fontFamily">roboto</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay"></style>
+
+    <style name="AppTheme.PopupOverlay"></style>
 
 
 </resources>
