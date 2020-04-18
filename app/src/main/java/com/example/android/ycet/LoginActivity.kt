@@ -81,6 +81,7 @@ class LoginActivity:AppCompatActivity() {
             if (currentUser.isEmailVerified) {
                 startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
+
             } else {
                 Toast.makeText(
                     baseContext, "Please verify your email address.",

@@ -46,5 +46,9 @@
     <string name="check_your_mail">Check your mail</string>
     <string name="error_occurred">Error Occurred</string>
     <string name="welcome_to">Welcome!</string>
+    <string name="attendance">Attendance</string>
+    <string name="douments">Douments</string>
+    <string name="notification">Notification</string>
+    <string name="ycet">ycet</string>
 
 </resources>
