@@ -47,8 +47,16 @@
     <string name="error_occurred">Error Occurred</string>
     <string name="welcome_to">Welcome!</string>
     <string name="attendance">Attendance</string>
-    <string name="douments">Douments</string>
     <string name="notification">Notification</string>
-    <string name="ycet">ycet</string>
+    <string name="ycet">YCET</string>
+    <string name="profile">Profile</string>
+    <string name="messages">Messages</string>
+    <string name="friends">Friends</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="nav_home">Home</string>
+    <string name="documents">Documents</string>
+    <string name="settings">Settings</string>
 
 </resources>
