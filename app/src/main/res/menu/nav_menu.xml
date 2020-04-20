@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group>
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_house_24px"
+                android:title="@string/nav_home"/>
         <item
                 android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_person_outline_24px"
+                android:title="@string/profile"/>
 
-                android:title="Profile"/>
         <item
-                android:id="@+id/nav_messages"
+            android:id="@+id/nav_documents"
+            android:icon="@drawable/ic_file_copy_24px"
+            android:title="@string/documents"/>
 
-                android:title="Messages"/>
+
         <item
-                android:id="@+id/nav_friends"
+            android:id="@+id/nav_attendance"
+            android:icon="@drawable/ic_view_list_24px"
+            android:title="@string/attendance"/>
 
-                android:title="Friends"/>
     </group>
 
-
-    <item android:title="Account Settings">
+    <item android:title="@string/account_settings"
+          android:textStyle="bold">
         <menu>
             <item
-                    android:id="@+id/nav_update"
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings_applications_24px"
+                android:title="@string/settings"/>
 
-                    android:title="Update Profile"/>
             <item
                     android:id="@+id/nav_logout"
-
-                    android:title="Sign Out"/>
+                android:icon="@drawable/ic_exit_to_app_24px"
+                    android:title="@string/sign_out"/>
         </menu>
     </item>
 </menu>
