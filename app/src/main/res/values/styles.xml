@@ -9,6 +9,14 @@
         <item name="fontFamily">roboto</item>
     </style>
 
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryPink</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryPurple</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">roboto</item>
+        <item name="fontFamily">roboto</item>
+    </style>
+
    <style name="AppTheme.NoActionBar">
        <item name="windowActionBar">false</item>
        <item name="windowNoTitle">true</item>
