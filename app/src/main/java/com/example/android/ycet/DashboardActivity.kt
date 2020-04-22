@@ -1,5 +1,6 @@
 package com.example.android.ycet
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -40,9 +41,30 @@ class DashboardActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
         when (item.itemId) {
             R.id.nav_profile -> {
                 Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, ProfileView::class.java)
+                startActivity(intent)
             }
+
+            R.id.nav_documents -> {
+                Toast.makeText(this, "Documents clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DocumentsView::class.java)
+                startActivity(intent)
+            }
+
+            R.id.nav_attendance -> {
+                Toast.makeText(this, "Attendance clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, AttendanceView::class.java)
+                startActivity(intent)
+            }
+
             R.id.nav_logout -> {
                 Toast.makeText(this, "Sign out clicked", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_settings -> {
+                Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,SettingApp::class.java)
+                startActivity(intent)
             }
 
         }

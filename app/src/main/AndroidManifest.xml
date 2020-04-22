@@ -26,6 +26,10 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".RegistrationActivity"/>
+        <activity android:name=".AttendanceView"/>
+        <activity android:name=".DocumentsView"/>
+        <activity android:name=".ProfileView"/>
+        <activity android:name=".SettingApp"/>
     </application>
 
 
