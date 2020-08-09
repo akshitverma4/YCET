@@ -1,15 +1,18 @@
-package com.example.android.ycet
+package com.example.android.ycet.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.example.android.ycet.R
+import com.example.android.ycet.classes.FireStore
+import com.example.android.ycet.models.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.fragment_register.*
 
 
-class RegistrationActivity : AppCompatActivity(){
+class RegistrationActivity : BaseActivity(){
     private lateinit var auth: FirebaseAuth
 
 
@@ -25,6 +28,8 @@ class RegistrationActivity : AppCompatActivity(){
 
     }
     private fun signUpUser() {
+        val firstName: String = nameEditText.text.toString().trim { it <= ' ' }
+        val lastName: String = passwordEditText.text.toString().trim { it <= ' ' }
 
         if (nameEditText.text.toString().isEmpty()){
             nameEditText.error="Please enter name"
@@ -61,14 +66,21 @@ class RegistrationActivity : AppCompatActivity(){
         auth.createUserWithEmailAndPassword(emailEditText.text.toString(), passwordEditText.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    val firebaseUser: FirebaseUser? = task.result!!.user
+                    // Registered Email
+                    val registeredEmail = firebaseUser!!.email!!
+
+
+
+                    val users = User(firebaseUser.uid,firstName,lastName,registeredEmail)
+
+                    // call the registerUser function of FirestoreClass to make an entry in the database.
+                    FireStore().registerUser(this@RegistrationActivity, users)
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
                     val user = auth.currentUser
                     user?.sendEmailVerification()
-                        ?.addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                startActivity(Intent(this, LoginActivity::class.java))
-                                finish()
-                            }
-                        }
+
                 } else {
                     Toast.makeText(
                         baseContext, "Sign Up failed. Try again after some time.",

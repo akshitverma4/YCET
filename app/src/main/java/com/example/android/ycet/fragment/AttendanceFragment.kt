@@ -1,22 +1,23 @@
-package com.example.android.ycet
+package com.example.android.ycet.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.android.ycet.R
 
 /**
  * A simple [Fragment] subclass.
  */
-class DocumentsFragment : Fragment() {
+class AttendanceFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_documents, container, false)
+        return inflater.inflate(R.layout.fragment_attendance, container, false)
     }
 
 }
