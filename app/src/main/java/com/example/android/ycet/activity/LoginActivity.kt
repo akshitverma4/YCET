@@ -1,35 +1,37 @@
-package com.example.android.ycet
+package com.example.android.ycet.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.example.android.ycet.R
+import com.example.android.ycet.classes.FireStore
+import com.example.android.ycet.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.emailEditText
 import kotlinx.android.synthetic.main.fragment_login.nameEditText
-import kotlinx.android.synthetic.main.fragment_register.*
 
-class LoginActivity:AppCompatActivity() {
+class LoginActivity: BaseActivity() {
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_login)
         auth = FirebaseAuth.getInstance()
 
-        signInButton.setOnClickListener {
-            doLogin()
+        signInButton.setOnClickListener {view ->
+            doLogin(view)
         }
         not_a_member_sign_up_now.setOnClickListener {
-            startActivity(Intent(this,RegistrationActivity::class.java))
+            startActivity(Intent(this,
+                RegistrationActivity::class.java))
             finish()
         }
     }
 
-    private fun doLogin() {
+    private fun doLogin(view:View) {
         if (nameEditText.text.toString().isEmpty()) {
             nameEditText.error = "Please enter email"
             nameEditText.requestFocus()
@@ -53,7 +55,8 @@ class LoginActivity:AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
 
                     val user = auth.currentUser
-                    updateUI(user)
+                   updateUI(user)
+                    FireStore().signInUser(this@LoginActivity)
                 } else {
                     // If sign in fails, display a message to the user.
 
@@ -90,5 +93,9 @@ class LoginActivity:AppCompatActivity() {
             }
 
         }
+    }
+    fun signInSuccess(user: User){
+        startActivity(Intent(this, DashboardActivity::class.java))
+        this.finish()
     }
 }

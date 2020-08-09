@@ -1,8 +1,9 @@
-package com.example.android.ycet
+package com.example.android.ycet.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android.ycet.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {
