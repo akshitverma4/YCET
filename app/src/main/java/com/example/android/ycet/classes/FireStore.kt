@@ -11,6 +11,8 @@ import com.example.android.ycet.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class FireStore {
     private val mFireStore = FirebaseFirestore.getInstance()

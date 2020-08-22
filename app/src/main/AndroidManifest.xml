@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".activity.TaskHome"></activity>
+        <activity android:name=".activity.Document"></activity>
+        <activity android:name=".activity.TaskHome" />
         <activity
             android:name=".activity.SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
@@ -24,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
             android:name=".activity.DashboardActivity"
