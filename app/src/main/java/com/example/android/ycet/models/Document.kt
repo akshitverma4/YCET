@@ -4,9 +4,11 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Document(
-    val id:String=""
+    val id:String="",
+    val name:String=""
 ) : Parcelable {
     constructor(source: Parcel) : this(
+        source.readString()!!,
         source.readString()!!
     )
 
@@ -14,6 +16,7 @@ data class Document(
 
     override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {
         writeString(id)
+        writeString(name)
     }
 
     companion object {
