@@ -1,11 +1,8 @@
-package com.example.android.ycet.fragment
+package com.example.android.ycet.activity
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.ycet.R
 import com.example.android.ycet.adapters.DocumentAdapter
@@ -18,28 +15,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/**
- * A simple [Fragment] subclass.
- */
-class DocumentsFragment : Fragment() {
+class DocumentActivity : AppCompatActivity(){
 
     private val personCollectionRef = FirebaseFirestore.getInstance()
     private lateinit var userAdapter: DocumentAdapter
     private var mUsers: List<Document>? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.fragment_documents)
         retrieveAllUsers()
         mUsers = ArrayList()
-        // Inflate the layout for this fragment
-
-        val view: View = inflater.inflate(R.layout.fragment_documents, container, false)
-        tvItem.setOnClickListener {
-            Toast.makeText(activity,"yo",Toast.LENGTH_SHORT).show()
-        }
-        return view
     }
     private fun retrieveAllUsers() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -54,11 +40,11 @@ class DocumentsFragment : Fragment() {
                             (mUsers as ArrayList<Document>).add(boards)
                             userAdapter =
                                 DocumentAdapter(
-                                    context!!,
+                                    this@DocumentActivity,
                                     mUsers!!
                                 )
                             search.adapter = userAdapter
-                            search.layoutManager = LinearLayoutManager(activity)
+                            search.layoutManager = LinearLayoutManager(this@DocumentActivity)
 
                         }
                     }
@@ -74,5 +60,4 @@ class DocumentsFragment : Fragment() {
         }
 
     }
-
 }

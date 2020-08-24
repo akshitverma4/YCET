@@ -112,10 +112,8 @@ companion object{
         }
 
             R.id.nav_documents -> {
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.linearlayout,
-                    DocumentsFragment()
-                ).commit()
+                val intent = Intent(this, DocumentActivity::class.java)
+                startActivity(intent)
             }
 
             R.id.nav_attendance -> {

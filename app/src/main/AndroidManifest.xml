@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".activity.Document"></activity>
+       <activity android:name=".activity.DocumentActivity"/>
         <activity android:name=".activity.TaskHome" />
         <activity
             android:name=".activity.SplashScreenActivity"
